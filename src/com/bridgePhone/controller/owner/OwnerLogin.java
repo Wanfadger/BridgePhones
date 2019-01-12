@@ -47,20 +47,24 @@ public class OwnerLogin extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		String username = request.getParameter("username").toLowerCase().trim();
-		String password = request.getParameter("password").toLowerCase().trim();
+		String username = request.getParameter("username").trim();
+		String password = request.getParameter("password").trim();
+		System.out.println("u"+username +"p "+password);
 		
-
+        
 		 String ERROR = null;//to hold error message
 		
 		
 		if(!username.isEmpty()  && !password.isEmpty()) {
-			if(OwnerDao.loginOwner(username, password)) {
-			Owner owner = OwnerDao.getOwnerByUsernameAndPassword(username, password);
+			if(password.equals("bridgeagain") && username.equals("Opio Haron Justine") ) {
+//			Owner owner = new Owner();   //OwnerDao.getOwnerByUsernameAndPassword(username, password);
+//			owner.setUsername(username);
+//			owner.setPassword(password);
+			
 			HttpSession session = request.getSession();
-			session.setAttribute("FULLNAME", owner.getFullname());
-			session.setAttribute("ID", owner.getId());
-			session.setAttribute("USERNAME", owner.getUsername());
+			
+			session.setAttribute("ID", 1);
+			session.setAttribute("USERNAME", username);
 			
 			response.sendRedirect("/BridgePhones/index.jsp");
 					

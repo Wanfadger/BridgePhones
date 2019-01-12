@@ -4,7 +4,9 @@
 <%@ page import="com.bridgePhone.dao.*"%>
 <%@ page import="java.util.*"%>
 
-<%
+<% 
+HttpSession sess = request.getSession();
+String username =(String)sess.getAttribute("USERNAME");
 	List<Product> products = ProductDao.getAllProductS();
 %>
 
@@ -41,7 +43,7 @@
 	</nav>
 
 	<div class="container mt-3">
-
+       <p> <%= "user: "+username %> </p>
 		<div class="card">
 
 			<div class="card-body">
