@@ -20,3 +20,10 @@ http://www.java2s.com/Code/Jar/c/Downloadcommysqljdbc515jar.htm</br>
 
 #Add mysql jar to build path<br/>
 follow the same procedure<br/>
+
+#Login details<br>
+-username:Opio Haron Justine<br> 
+-password:bridgeagain<br>
+
+#Database(sql files)<br>
+-check database folder in webContent to get database files<br>
